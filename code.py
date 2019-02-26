@@ -16,8 +16,7 @@ def link():
         link = soup.find("a", {"class":"post-block__title__link"}).get("href")
         time.sleep(1)
         return link
-#
-
+        
 def post():
         BOT_TOKEN ="700530653:AAHLS3cuFe1pOKuE4c2nLWiviE7KDvtJOE8"
         CHANNEL_NAME = "@techcrunch_news" 

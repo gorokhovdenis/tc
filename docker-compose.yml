@@ -1,0 +1,12 @@
+# docker-compose.yml
+version: '3'
+services:
+  redis-server:
+    image: redis
+    volumes:
+      - .:/data
+  tc:
+    build: .
+    restart: always
+    links:
+      - redis-server

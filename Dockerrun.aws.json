@@ -5,7 +5,8 @@
       "name": "tc",
       "image": "gorokhovdenis/tc",
       "hostname": "tc",
-      "essential": true
+      "essential": true,
+      "memory": 128
     }
   ]
 }

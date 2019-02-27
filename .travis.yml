@@ -10,3 +10,16 @@ after_success:
 - docker build -t gorokhovdenis/tc .
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 - docker push gorokhovdenis/tc
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-west-2
+  app: tc
+  env: Tc-env
+  bucket_name: elasticbeanstalk-us-west-2-017717725329
+  bucket_path: docker-tc
+  on:
+    branch: master
+  access_key_id: AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: AWS_SECRET_KEY

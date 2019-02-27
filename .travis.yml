@@ -10,7 +10,7 @@ after_success:
 - docker build -t gorokhovdenis/tc .
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 - docker push gorokhovdenis/tc
-
+#
 deploy:
   provider: elasticbeanstalk
   region: us-west-2

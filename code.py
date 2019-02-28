@@ -16,7 +16,7 @@ def link():
         link = soup.find("a", {"class":"post-block__title__link"}).get("href")
         time.sleep(1)
         return link
-        
+
 def post():
         BOT_TOKEN ="700530653:AAHLS3cuFe1pOKuE4c2nLWiviE7KDvtJOE8"
         CHANNEL_NAME = "@techcrunch_news" 
@@ -27,13 +27,15 @@ def post():
         time.sleep(180)
 
 def getlastpost():
-        redis_host = "redis-server"
+#        redis_host = "redis-server"
+        redis_host = "tc-redis.q6xu0a.0001.usw2.cache.amazonaws.com"
         redis_port = 6379
         r = redis.StrictRedis(host=redis_host, port=redis_port, decode_responses=True)
         msg = r.get("msg:last")
         return msg
 def setlastpost():
-        redis_host = "redis-server"
+#        redis_host = "redis-server"
+        redis_host = "tc-redis.q6xu0a.0001.usw2.cache.amazonaws.com"
         redis_port = 6379
         r = redis.StrictRedis(host=redis_host, port=redis_port, decode_responses=True)
         r.set("msg:last", link())

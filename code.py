@@ -24,7 +24,6 @@ def post():
         bot = telebot.TeleBot(BOT_TOKEN)
         time.sleep(1)
         bot.send_message(CHANNEL_NAME, link())
-        bot.send_message(CHANNEL_NAME, "test")
         time.sleep(180)
 
 def getlastpost():
